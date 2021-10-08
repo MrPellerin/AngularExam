@@ -1,16 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RestaurantTableComponent } from './Restaurant/components/restaurant-table/restaurant-table.component';
+import { RestaurantSmartComponentComponent } from './Restaurant/pages/restaurant-smart-component/restaurant-smart-component.component';
+import {ROUTES} from "./routing";
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { ColorEvaluationDirective } from './color-evaluation.directive';
+import { RestaurantFormComponent } from './Restaurant/components/restaurant-form/restaurant-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RestaurantTableComponent,
+    RestaurantSmartComponentComponent,
+    ColorEvaluationDirective,
+    RestaurantFormComponent,
   ],
   imports: [
+    RouterModule,
+    RouterModule.forRoot(ROUTES),
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
