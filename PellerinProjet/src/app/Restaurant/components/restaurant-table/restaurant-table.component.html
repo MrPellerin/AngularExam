@@ -1,0 +1,21 @@
+<h3>Découvrez la liste des restaurants</h3>
+
+<table>
+  <thead>
+  <tr>
+    <th>Nom</th>
+    <th>Adresse</th>
+    <th>Moyenne</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let restaurant of restaurantsLst">
+    <td [appColorEvaluation]="test(restaurant)">{{ restaurant.nom }}</td>
+    <td [appColorEvaluation]="test(restaurant)">{{ restaurant.adresse }}</td>
+    <td *ngIf="restaurant.evaluations.length > 0" [appColorEvaluation]="test(restaurant)">{{ test(restaurant) }}</td>
+    <td *ngIf="restaurant.evaluations.length == 0"> / </td>
+    <td [appColorEvaluation]="test(restaurant)">Détails</td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,26 @@
+<h3>Ajoutez votre restaurant</h3>
+
+<form #form="ngForm" (ngSubmit)="submit()">
+  <label for="Nom">Nom :</label>
+  <br>
+  <input style="width: 500px" #nomInput="ngModel" type="text" id="Username" name="Nom" required minlength="1" maxlength="30" [(ngModel)]="restaurant.nom">
+  <br>
+  <span *ngIf="nomInput.invalid && nomInput.errors && nomInput.errors.required" style="color: darkred">Le champs nom est requis</span>
+  <span *ngIf="nomInput.invalid && nomInput.errors && nomInput.errors.minlength" style="color: orangered">Le champs nom est trop court</span>
+  <span *ngIf="nomInput.invalid && nomInput.errors && nomInput.errors.maxlength" style="color: orangered">Le champs nom est trop long</span>
+
+  <br><br>
+
+  <label for="Adresse">Adresse :</label>
+  <br>
+  <input style="width: 500px" #adresseInput="ngModel" type="text" id="Adresse" name="Adresse" required minlength="5" maxlength="50" [(ngModel)]="restaurant.adresse">
+  <br>
+  <span *ngIf="adresseInput.invalid && adresseInput.errors && adresseInput.errors.required" style="color: darkred">Le champs adresse est requis</span>
+  <span *ngIf="adresseInput.invalid && adresseInput.errors && adresseInput.errors.minlength" style="color: orangered">Le champs adresse est trop court</span>
+  <span *ngIf="adresseInput.invalid && adresseInput.errors && adresseInput.errors.maxlength" style="color: orangered">Le champs adresse est trop long</span>
+
+  <br><br><br><br>
+  <input type="submit">
+</form>
+
+{{restaurant | json}}
