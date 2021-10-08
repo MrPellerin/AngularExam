@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ColorEvaluationDirective } from './color-evaluation.directive';
 import { RestaurantFormComponent } from './Restaurant/components/restaurant-form/restaurant-form.component';
+import { RestaurantSmartFicheComponent } from './Restaurant/pages/restaurant-smart-fiche/restaurant-smart-fiche.component';
+import {RestaurantFicheComponent} from "./Restaurant/components/restaurant-fiche/restaurant-fiche.component";
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { RestaurantFormComponent } from './Restaurant/components/restaurant-form
     RestaurantSmartComponentComponent,
     ColorEvaluationDirective,
     RestaurantFormComponent,
+    RestaurantFicheComponent,
+    RestaurantSmartFicheComponent,
   ],
   imports: [
     RouterModule,

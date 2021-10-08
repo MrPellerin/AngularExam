@@ -1,0 +1,37 @@
+<h3>Découvrez le restaurant : {{restaurant.nom}}</h3>
+
+<table (click)="test()">
+  <thead>
+  <tr>
+    <th>Nom</th>
+    <th>Adresse</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{ restaurant.nom }}</td>
+    <td>{{ restaurant.adresse }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<br><br><br><br>
+
+<table (click)="test()">
+  <thead>
+  <tr>
+    <th>Evaluateur</th>
+    <th>Commentaire</th>
+    <th>Etoiles</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let evaluation of restaurant.evaluations">
+    <td>{{ evaluation.evaluateur }}</td>
+    <td>{{ evaluation.commentaire }}</td>
+    <td>{{ evaluation.etoiles }}</td>
+  </tr>
+  </tbody>
+</table>
+
+
